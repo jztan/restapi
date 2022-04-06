@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_api_key',
 ]
 
 MIDDLEWARE = [
@@ -120,11 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+API_KEY_CUSTOM_HEADER = "HTTP_X_API_KEY"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework_api_key.permissions.HasAPIKey',
     ]
 }
