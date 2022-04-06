@@ -17,3 +17,8 @@ puyhon manage.py migrate
 ```
 puyhon manage.py runserver
 ```
+
+## Generate OpenAPI Schema
+```
+python ./manage.py generateschema --file openapi-schema.yml
+```
